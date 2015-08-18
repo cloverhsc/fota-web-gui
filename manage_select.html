@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <link rel="stylesheet" href="css/bootstrap-theme.css"> 
+    <link rel="stylesheet" href="css/manage.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/manage_select.js"></script>
+  
+  </head>
+  <body>
+    <div class="container">
+        <div id="tabPal" class="newItem">
+          <ul  class="list-unstyle nav nav-tabs" id="category">
+            <li class="active"><a href="#group">By Group</a></li>
+            <li><a href="#range_ids">By Range of Device IDs</a> </li>
+            <li><a href="#dev_id">By Device ID</a></li>
+            <li><a href="#import_list">By Import list</a></li>
+          </ul>
+          <script>
+                $('#category a').click(function(e){
+                    e.preventDefault()
+                    $(this).tab('show')
+                });
+          </script>
+
+          <div class="tab-content">
+              <div id="group" class="tab-pane active fade in">
+                <form action="#" method="get" >
+                    <label for="send_by_group"><mark>Select Group</mark></label>
+                    <select name="group" class="form-control location" id="send_by_group">
+                        <option value="None"></option>
+                        <option value="Group A">Group A</option>
+                        <option value="Group B">Group B</option>
+                        <option value="Group C">Group C</option>
+                        <option value="Group D">Group D</option>
+                        <option value="Group E">Group E</option>
+                        <input  type="submit" name="submit" value="Send GCM"  class="btn btn-info location" id="submit"/>
+                    </select>
+                </form>
+              </div>
+
+              <div id="range_ids" class="tab-pane fade in">
+                <form action="#" method="get" >
+                    <div class="form-group has-warning start location" id="start_id">
+                    <label  for="StartID"><mark>Start:</mark></label> 
+                    <input type="text" name="start" class="form-control" id="StartID">
+                    </div>
+
+                    <div class=" form-group has-warning location" id="end_id">
+                    <label  for="EndID"><mark>To:</mark></label> 
+                    <input type="text" name="end" class="form-control" id="EndID">
+                    </div>
+
+                    <input  type="submit" name="submit" value="Send GCM"  class="btn btn-info" id="submit"/>
+                </form>
+              </div>
+
+              <div id="dev_id"  class="tab-pane fade" >
+                 <form action="#" method="get" >
+                    <div class="form-group has-warning location" id="which_id">
+                    <label  for="WhichID"><mark>Device ID:</mark></label> 
+                    <input type="text" name="which_id" class="form-control" id="WhichID">
+                    </div>
+
+                    <input  type="submit" name="submit" value="Send GCM"  class="btn btn-info" id="submit"/>
+                </form>
+              </div>
+
+              <div id="import_list"  class="tab-pane fade" >
+                 <form action="#" method="get" >
+                    <div class="form-group has-warning start location" id="from_file">
+                    <label  for="FromFile"><mark>Upload file</mark></label> 
+                    <input type="file" name="from_file" class="form-control" id="FromFile">
+                    </div>
+
+                    <input  type="submit" name="submit" value="Send GCM"  class="btn btn-info" id="submit"/>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

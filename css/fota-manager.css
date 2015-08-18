@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+.col-lg-4 , .col-sm-4{
+    border-right: 2px solid #69a0d6;
+    height:800px;
+    font-size: 20px;
+}
+.col-lg-8 , .col-sm-8{
+
+}
+
+/* nav */
+#Main_Nav li{
+    margin:10% 5%;
+}

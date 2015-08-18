@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <link rel="stylesheet" href="css/bootstrap-theme.css"> 
+    <link rel="stylesheet" href="css/manage.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/manage_group.js"></script>
+  
+  </head>
+  <body>
+    <div class="container">
+        <div id="tabPal" class="newItem">
+          <ul  class="list-unstyle nav nav-tabs" id="category">
+            <li class="active"><a href="#Add">Add</a></li>
+            <li><a href="#Edit">Edit</a> </li>
+            <li><a href="#Delete">Delete</a></li>
+          </ul>
+          <script>
+                $('#category a').click(function(e){
+                    e.preventDefault()
+                    $(this).tab('show')
+                });
+          </script>
+
+          <div class="tab-content">
+              <div id="Add" class="tab-pane active fade in">
+                <form action="#" method="get" >
+                  <div class="location form-group has-warning location">
+                    <label for="GroupName"><mark>Group name:</mark></label>
+                    <input  type="text" name="Group name"  class="form-control" id="GroupName"/>
+                  </div>
+
+                  <div class="location form-group has-warning location">
+                    <label for="Description"><mark>Description</mark></label>
+                    <textarea name="descript model" id="Description" row="5"  class="form-control"></textarea>
+                  </div>
+                    <input  type="submit" name="Add group" value="Add"  class="btn btn-info" id="add_group"/>
+                </form>
+              </div>
+
+              <div id="Edit" class="tab-pane fade in ">
+                  
+                  <form action="#" method="get" >
+                    <div id="edit_group" class="location">
+                      <label  for="edit_select_group"><mark>Select Group :</mark></label> 
+                      <select name="edit group" class="form-control location" id="edit_select_group">
+                          <option value="None"></option>
+                          <option value="Group A">Group A</option>
+                          <option value="Group B">Group B</option>
+                          <option value="Group C">Group C</option>
+                          <option value="Group D">Group D</option>
+                      </select>
+                     </div>
+                    <div class="form-group has-warning location">
+                    <label  for="ChangeGroupName"><mark>Change Group Name :</mark></label> 
+                    <input type="text" name="change group name" class="form-control" id="ChangeGroupName">
+                    </div>
+
+                    <div class=" form-group has-warning location">
+                    <label  for="ChangeDescription"><mark>Change Description:</mark></label> 
+                    <textarea row="5" name="change description" class="form-control" id="ChangeDescription"></textarea>
+                    </div>
+
+                    <input  type="submit" name="Save edit group" value="Save"  class="btn btn-info" id="save_edit_group"/>  
+                  </form>
+                 
+              </div>
+
+              <div id="Delete"  class="tab-pane fade location " >
+                 <form action="#" method="get">
+                    <label  for="delete_group"><mark>Select Group :</mark></label>
+                   <select name="delete group" class="form-control location" id="delete_group">
+                      <option value="None"></option>
+                      <option value="Group A">Group A</option>
+                      <option value="Group B">Group B</option>
+                      <option value="Group C">Group C</option>
+                      <option value="Group D">Group D</option>
+                  </select>
+                  <input  type="submit" name="Delete group" value="Delete"  class="btn btn-info location" id="delete_group"/>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

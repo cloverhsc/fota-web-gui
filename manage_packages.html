@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <link rel="stylesheet" href="css/bootstrap-theme.css"> 
+    <link rel="stylesheet" href="css/manage.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/manage_packages.js"></script>
+  
+  </head>
+  <body>
+    <div class="container">
+        <div id="tabPal" class="newItem">
+          <ul  class="list-unstyle nav nav-tabs" id="category">
+            <li class="active"><a href="#Add" >Add</a></li>
+            <li><a href="#Edit" >Edit</a> </li>
+            <li><a href="#Delete">Delete</a></li>
+          </ul>
+          <script>
+                $('#category a').click(function(e){
+                    e.preventDefault()
+                    $(this).tab('show')
+                });
+          </script>
+
+          <div class="tab-content">
+          <!--      ==============     Add Devices  ===============   -->
+          <div id="Add" class="tab-pane active fade in">
+            <form action="#" method="get" >
+                <div id="packages_orginal_version" class="location">
+                    <label for="OriginalVersion"><mark>Original Version:</mark></label>
+                    <input type="text" name="packages original version" class="form-control" id="OriginalVersion"/>
+                </div>
+
+                <div id="packages_target_version" class="location">
+                    <label for="TargetVersion"><mark>Target Version:</mark></label>
+                    <input  type="text" name="packages target version" class="form-control" id="TargetVersiion" />
+                </div>
+
+                <div id="packages_stage" class="location">
+                    <label for="select_stage"><mark>Stage:</mark></label>
+                    <select name="setting stage" class="form-control" id="select_stage">
+                        <option value="None"></option>
+                        <option value="Alpha">Alpha</option>
+                        <option value="Beta">Beta</option>
+                        <option value="Release">Release</option>
+                    </select>
+                </div>
+                <div id="packages_description" class="location">
+                    <label for="packages_description_content"><mark>Description:</mark></label>
+                    <textarea id="packages_description_content" rows="5" name="packages description" class="form-control"></textarea>
+                </div>
+                <input  type="submit" name="Add packages" value="Add"  class="btn btn-info location" id="add_packages"/>
+            </form>
+          </div>
+          <!--      ==============     Edit Devices  ===============   -->
+          <div id="Edit" class="tab-pane active fade">
+            <form action="#" method="get" >
+                <div id="edit_packages_version" class="location">
+                    <label for="EditPackageVersion"><mark>Package Version:</mark></label>
+                    <input type="text" name="edit packages version" class="form-control" id="EditPackageVersion"/>
+                </div>
+
+                <div id="edit_packages_target_version" class="location">
+                    <label for="EditTargetVersion"><mark>Target Version:</mark></label>
+                    <input  type="text" name="edit packages target version" class="form-control" id="EditTargetVersiion" />
+                </div>
+
+                <div id="edit_packages_stage" class="location">
+                    <label for="edit_select_stage"><mark>Stage:</mark></label>
+                    <select name="edit setting stage" class="form-control" id="edit_select_stage">
+                        <option value="None"></option>
+                        <option value="Alpha">Alpha</option>
+                        <option value="Beta">Beta</option>
+                        <option value="Release">Release</option>
+                    </select>
+                </div>
+                <div id="edit_packages_description" class="location">
+                    <label for="edit_packages_description_content"><mark>Description:</mark></label>
+                    <textarea id="edit_packages_description_content" rows="5" name="edit packages description" class="form-control"></textarea>
+                </div>
+                <input  type="submit" name="save" value="Save"  class="btn btn-info location" id="save"/>
+            </form>
+          </div>
+          <!--      ==============     Delete Devices  ===============   -->
+            <div id="Delete" class="tab-pane active fade">
+                <form action="#" method="get" >
+                    <div class="location" id="delete_packages_version">
+                        <label for="DeletePackagesVersion"><mark>Package Version:</mark></label>
+                        <input type="text" name="delete package version" class="form-control" id="DeletePackagesVersion" />
+                    <input  type="submit" name="delete device" value="Delete"  class="btn btn-info location" id="DeleteDevice"/>
+                    </div>
+                </form>
+            </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

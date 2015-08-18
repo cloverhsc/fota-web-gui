@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <link rel="stylesheet" href="css/bootstrap-theme.css"> 
+    <link rel="stylesheet" href="css/manage.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/manage_stage.js"></script>
+  
+  </head>
+  <body>
+    <div class="container">
+        <div id="tabPal" class="newItem">
+          <ul  class="list-unstyle nav nav-tabs" id="category">
+            <li class="active"><a href="#Add">Add</a></li>
+            <li><a href="#Edit">Edit</a> </li>
+            <li><a href="#Delete">Delete</a></li>
+          </ul>
+          <script>
+                $('#category a').click(function(e){
+                    e.preventDefault()
+                    $(this).tab('show')
+                });
+          </script>
+
+          <div class="tab-content">
+              <div id="Add" class="tab-pane active fade in">
+                <form action="#" method="get" >
+                  <div class="location form-group has-warning location">
+                    <label for="StageName"><mark>Stage name:</mark></label>
+                    <input  type="text" name="stage name"  class="form-control" id="StageName"/>
+                  </div>
+
+                  <div class="location form-group has-warning location">
+                    <label for="StageDescription"><mark>Description</mark></label>
+                    <textarea name="stage description " id="StageDescription" row="5"  class="form-control"></textarea>
+                  </div>
+                    <input  type="submit" name="add stage" value="Add"  class="btn btn-info" id="Add_Stage"/>
+                </form>
+              </div>
+
+              <div id="Edit" class="tab-pane fade in ">
+
+                  <form action="#" method="get" >
+                    <div id="edit_stage" class="location">
+                      <label for="edit_select_stage"><mark>Select Stage:</mark></label>
+                          <select name="edit stage" class="form-control " id="edit_select_stage">
+                              <option value="None"></option>
+                              <option value="Alpha">Alpha</option>
+                              <option value="Beta">Beta</option>
+                              <option value="Release">Release</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group has-warning location">
+                    <label  for="ChangeStageName"><mark>Change Stage Name :</mark></label> 
+                    <input type="text" name="change stage name" class="form-control" id="ChangeStageName">
+                    </div>
+
+                    <div class=" form-group has-warning location">
+                    <label  for="ChangeStageDescription"><mark>Change Description:</mark></label> 
+                    <textarea row="5" name="change stage description" class="form-control" id="ChangeStageDescription"></textarea>
+                    </div>
+
+                    <input  type="submit" name="submit" value="Save"  class="btn btn-info" id="submit"/>  
+                  </form>
+                 
+              </div>
+
+              <div id="Delete"  class="tab-pane fade location " >
+                 <form action="#" method="get">
+                    <label for="delete_stage"><mark>Select Model:</mark></label>
+                    <select name="delete stage" class="form-control location" id="delete_stage">
+                      <option value="None"></option>
+                      <option value="Alpha">Alpha</option>
+                      <option value="Beta">Beta</option>
+                      <option value="Release">Release</option>
+                  </select>
+
+                  <input  type="submit" name="Delete" value="Delete"  class="btn btn-info location" id="delete"/>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
